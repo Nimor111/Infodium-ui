@@ -1,21 +1,21 @@
-import React, {Component} from "react";
-import {Form, FormGroup, Input, Label, Button, Container} from "reactstrap";
+import React, { Component } from "react";
+import { Form, FormGroup, Input, Label, Button, Container } from "reactstrap";
 import PropTypes from "prop-types";
 
 class SignupForm extends Component {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string
+    className: PropTypes.string,
   };
 
   state = {
     email: "",
     password: "",
-    username: ""
+    username: "",
   };
 
   handleChange = e => {
-    this.setState({[e.target.name]: e.target.value});
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   render() {

@@ -1,15 +1,15 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 
-import {ListGroupItem} from "reactstrap";
-import {Link} from "react-router-dom";
+import { ListGroupItem } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const leagueItem = props => {
-  const {item} = props;
+  const { item } = props;
 
   const styles = {
     link: {
-      textDecoration: "none"
-    }
+      textDecoration: "none",
+    },
   };
 
   return (

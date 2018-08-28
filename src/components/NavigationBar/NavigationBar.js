@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 import {
   Collapse,
@@ -7,17 +7,17 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
 } from "reactstrap";
 
 class NavigationBar extends Component {
   state = {
-    open: false
+    open: false,
   };
 
   toggle = () => {
     this.setState({
-      open: !this.state.open
+      open: !this.state.open,
     });
   };
 

@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {Jumbotron} from "reactstrap";
+import { Jumbotron } from "reactstrap";
 
 const LeagueDetailItem = props => {
-  const {league} = props;
+  const { league } = props;
 
   return (
     <div>
@@ -21,7 +21,7 @@ const LeagueDetailItem = props => {
 LeagueDetailItem.propTypes = {
   name: PropTypes.string,
   country: PropTypes.string,
-  currentMatchday: PropTypes.string
+  currentMatchday: PropTypes.string,
 };
 
 export default LeagueDetailItem;

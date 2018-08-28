@@ -1,10 +1,10 @@
 import React from "react";
 import "./List.css";
 
-import {ListGroup} from "reactstrap";
+import { ListGroup } from "reactstrap";
 
 const list = props => {
-  const {items} = props;
+  const { items } = props;
 
   return (
     <ListGroup>

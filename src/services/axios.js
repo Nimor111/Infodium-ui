@@ -15,8 +15,8 @@ export const setAuthMiddleware = axios => {
 export const api = axios.create({
   baseURL,
   headers: {
-    "Content-Type": "application/json"
-  }
+    "Content-Type": "application/json",
+  },
 });
 
 export default setAuthMiddleware(api);

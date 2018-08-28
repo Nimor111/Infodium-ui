@@ -1,23 +1,23 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import {getLeagues} from "../../services/leagueService";
+import { getLeagues } from "../../services/leagueService";
 
 import LeagueList from "../../components/LeagueList/LeagueList";
 
 class Leagues extends Component {
   static propTypes = {
     children: PropTypes.node,
-    className: PropTypes.string
+    className: PropTypes.string,
   };
 
   state = {
-    leagues: []
+    leagues: [],
   };
 
   componentDidMount() {
     getLeagues()
-      .then(leagues => this.setState({leagues}))
+      .then(leagues => this.setState({ leagues }))
       .catch(err => console.log(err));
   }
 
