@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Form, FormGroup, Input, Label, Button, Container } from "reactstrap";
 import PropTypes from "prop-types";
 
+import { signUp } from "../../services/authService";
+
 class SignupForm extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -18,10 +20,19 @@ class SignupForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+    signUp(this.state)
+      .then(token => localStorage.setItem("auth-token", token.data))
+      .catch(err => console.log(err));
+
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <Container>
-        <Form>
+        <Form onSubmit={this.handleSubmit} method="POST">
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
             <Input
