@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Form, FormGroup, Input, Label, Button, Container } from "reactstrap";
 import PropTypes from "prop-types";
 
-import { signUp } from "../../services/authService";
+import { login } from "../../services/authService";
 
-class SignupForm extends Component {
+class LoginForm extends Component {
   static propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
@@ -13,7 +13,6 @@ class SignupForm extends Component {
   state = {
     email: "",
     password: "",
-    username: "",
   };
 
   handleChange = e => {
@@ -22,7 +21,7 @@ class SignupForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    signUp(this.state)
+    login(this.state)
       .then(token => {
         localStorage.setItem("auth-token", token.data);
         this.props.history.push("/");
@@ -45,16 +44,6 @@ class SignupForm extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleUsername">Username</Label>
-            <Input
-              type="text"
-              name="username"
-              id="username"
-              onChange={this.handleChange}
-              value={this.state.username}
-            />
-          </FormGroup>
-          <FormGroup>
             <Label for="examplePassword">Password</Label>
             <Input
               type="password"
@@ -71,4 +60,4 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+export default LoginForm;

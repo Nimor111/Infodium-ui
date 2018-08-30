@@ -8,3 +8,12 @@ export const signUp = async data => {
     console.log(err);
   }
 };
+
+export const login = async data => {
+  try {
+    const token = await axios.post("/auth/login", data);
+    return token;
+  } catch (err) {
+    console.log(err);
+  }
+};

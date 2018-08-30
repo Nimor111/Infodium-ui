@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 import {
   Collapse,
@@ -9,6 +9,9 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import "./NavigationBar.css";
+
+import { Link } from "react-router-dom";
 
 class NavigationBar extends Component {
   state = {
@@ -22,6 +25,25 @@ class NavigationBar extends Component {
   };
 
   render() {
+    const navbarLinks = !this.props.authenticated ? (
+      <Fragment>
+        <NavItem>
+          <NavLink href="/login">Login</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="/register">Register</NavLink>
+        </NavItem>
+      </Fragment>
+    ) : (
+      <Fragment>
+        <NavItem>
+          <Link to="/logout" id="logoutLink">
+            Logout
+          </Link>
+        </NavItem>
+      </Fragment>
+    );
+
     return (
       <div className="Navbar">
         <Navbar color="light" light expand="md">
@@ -29,12 +51,7 @@ class NavigationBar extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.open} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="#">Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/register">Register</NavLink>
-              </NavItem>
+              {navbarLinks}
             </Nav>
           </Collapse>
         </Navbar>

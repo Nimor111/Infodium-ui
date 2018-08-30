@@ -4,7 +4,7 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 
 const layout = props => (
   <Fragment>
-    <NavigationBar />
+    <NavigationBar authenticated={props.authenticated} />
     {props.children}
   </Fragment>
 );

@@ -1,0 +1,8 @@
+#logoutLink:hover {
+  color: #000000;
+}
+
+#logoutLink {
+  text-decoration: none;
+  color: #686868;
+}
