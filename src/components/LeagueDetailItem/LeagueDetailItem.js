@@ -10,9 +10,12 @@ const LeagueDetailItem = props => {
     <div>
       <Jumbotron>
         <h1 className="display-3">{league.name}</h1>
-        <p className="lead">{league.country}</p>
+        <p className="lead">Country: {league.country}</p>
         <hr className="my-2" />
-        <p>{league.currentMatchday}</p>
+        <p>
+          Current matchday:
+          {league.currentMatchday ? league.currentMatchday : " N/A"}
+        </p>
       </Jumbotron>
     </div>
   );
