@@ -16,9 +16,7 @@ const teamItem = props => {
     <Fragment>
       <Link to={`teams/${item.id}`} style={styles.link}>
         <ListGroupItem key={item.id} color="success">
-          <div className="loadingText">
-            {item.name} - {item.tla}
-          </div>
+          <div className="loadingText">{item.name}</div>
         </ListGroupItem>
       </Link>
     </Fragment>
