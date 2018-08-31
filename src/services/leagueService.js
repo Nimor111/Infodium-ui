@@ -17,3 +17,12 @@ export const getLeague = async id => {
     console.log(err);
   }
 };
+
+export const getLeagueTeams = async id => {
+  try {
+    const teams = await axios.get(`/leagues/${id}/teams`);
+    return teams;
+  } catch (err) {
+    console.log(err);
+  }
+};

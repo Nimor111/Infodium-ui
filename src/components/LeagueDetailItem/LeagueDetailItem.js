@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 import { Jumbotron } from "reactstrap";
 
+import LeagueTeams from "../../containers/LeagueTeams/LeagueTeams";
+
 const LeagueDetailItem = props => {
   const { league } = props;
 
@@ -16,6 +18,8 @@ const LeagueDetailItem = props => {
           Current matchday:
           {league.currentMatchday ? league.currentMatchday : " N/A"}
         </p>
+        Teams:
+        <LeagueTeams leagueId={league.id} />
       </Jumbotron>
     </div>
   );
