@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import List from "../List/List";
 import TeamItem from "../TeamItem/TeamItem";
